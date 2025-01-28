@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advent Education</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #187fab;
+      color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #BFDBFE;
+    }
+
+    footer {
+      background-color: #187fab;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #187fab;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid #E5E7EB;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.8); /* Transparan */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .contact-card:hover {
+      background-color: rgba(255, 255, 255, 1); /* Hilangkan transparansi saat hover */
+    }
+
+    iframe {
+      border: 0;
+      border-radius: 0.5rem;
+      width: 100%;
+      height: 300px;
+    }
+
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loading img {
+      width: 100px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <img src="/logo.png" alt="Loading...">
+  </div>
+  <header class="fade-in">
+    <div class="container">
+      <div>
+        <img src="/logo.png" alt="Logo" style="width: 100px; height: auto; vertical-align: middle;">
+        <span style="font-size: 1.5rem; font-weight: bold; margin-left: 0.5rem;">Advent Education</span>
+      </div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Hubungi Kami</a>
+        <a href="#location">Lokasi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="gallery" class="fade-in">
+      <h2>Galeri Sekolah</h2>
+      <div class="gallery">
+        <img src="logo.png" alt="Gallery 1">
+        <img src="logo.png" alt="Gallery 2">
+        <img src="logo.png" alt="Gallery 3">
+        <img src="logo.png" alt="Gallery 4">
+        <img src="logo.png" alt="Gallery 5">
+        <img src="logo.png" alt="Gallery 6">
+        <img src="logo.png" alt="Gallery 7">
+        <img src="logo.png" alt="Gallery 8">
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Hubungi Kami</h2>
+      <div class="contact-card">    
+        <span>&#128222;</span>
+        <span>+62 0813-3255-0615</span>
+        <span>+62 0821-7279-4387</span>
+      </div>
+      <div class="contact-card">
+        <span>&#128231;</span>
+        <span>smaadvbatamgood@gmail.com</span>
+      </div>
+    </section>
+
+    <section id="location" class="fade-in">
+      <h2>Lokasi Sekolah</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.032678574515!2d104.0132224!3d1.1370524!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9896d4a26327b%3A0x7337ffa630e19736!2sSmp%20Advent%20Batam!5e0!3m2!1sid!2sid!4v1738042078242!5m2!1sid!2sid"></iframe>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Yayasan Pendidikan Advent Batam. All rights reserved.</p>
+    <p>&copy; Sponsored By Xera Cloud ID</p>
+  </footer>
+
+  <script>
+    window.onload = () => {
+      document.getElementById('loading').style.display = 'none';
+    };
+  </script>
+</body>
+</html>
